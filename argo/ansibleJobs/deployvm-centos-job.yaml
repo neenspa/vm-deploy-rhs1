@@ -1,0 +1,12 @@
+---
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleJob
+metadata:
+  name: deployvm-centos-job
+  namespace: aap
+spec:
+  connection_secret: aapaccess
+  job_template_name: VM_provisioning
+  extra_vars: {
+"vm_name": "vm-sum-rh"
+}
